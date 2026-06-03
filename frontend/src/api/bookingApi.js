@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: " https://sri-arpan.onrender.com",
+  baseURL: "https://sri-arpan.onrender.com/api",
 });
 
 export default API;
