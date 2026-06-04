@@ -1,4 +1,4 @@
-import express from "express";
+/* import express from "express";
 import { createBooking, getAllBookings } from "../controllers/bookingController.js";
 
 const router = express.Router();
@@ -6,4 +6,4 @@ const router = express.Router();
 router.post("/create", createBooking);
 router.get("/", getAllBookings);
 
-export default router;
+export default router;  */

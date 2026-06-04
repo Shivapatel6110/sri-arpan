@@ -13,9 +13,9 @@ function Navbar() {
         </div>
 
         <div className="desk-nav-links">
-          <a href="#featured-pujas">Puja Booking</a>
-          <Link to="/chadhava">Chadhava</Link>
-          <Link to="/charity">Charity</Link>
+          <a href="#">Puja Booking</a>
+          <a href="#">Chadhava</a>
+          <a href="#">Charity</a>
           <a href="#" className="astro-link">
             ✦ Ask Astrologer
           </a>

@@ -1,4 +1,4 @@
-import Booking from "../models/Booking.js";
+/*import Booking from "../models/Booking.js";
 
 export const createBooking = async (req, res) => {
   try {
@@ -61,4 +61,4 @@ export const getAllBookings = async (req, res) => {
       message: error.message,
     });
   }
-};
+}; */

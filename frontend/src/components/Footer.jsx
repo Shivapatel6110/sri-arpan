@@ -70,7 +70,7 @@ function Footer() {
                 <li><a href="#">Ask Astrologer</a></li>
                 <li><a href="#">Gift a Puja</a></li>
               </ul>
-            </div>
+            </div> 
 
             <div>
               <div className="footer-col-title">

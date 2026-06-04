@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import BookingForm from "./pages/BookingForm";
-import ChadhavaForm from "./pages/ChadhavaForm";
-import CharityForm from "./pages/CharityForm";
+
+import ChadhavaDetails from "./pages/ChadhavaDetails";
 
 function App() {
   return (
@@ -11,11 +10,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/booking" element={<BookingForm />} />
+        <Route path="/chadhava/:id" element={<ChadhavaDetails />} />
 
-        <Route path="/chadhava" element={<ChadhavaForm />} />
-
-        <Route path="/charity" element={<CharityForm />} />
+        
       </Routes>
     </BrowserRouter>
   );
