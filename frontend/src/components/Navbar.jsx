@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 function Navbar() {
   return (
     <nav className="desk-nav">
@@ -14,7 +13,10 @@ function Navbar() {
 
         <div className="desk-nav-links">
           <a href="#">Puja Booking</a>
-          <a href="#">Chadhava</a>
+
+          {/* ── Chadhava → links to Chadava booking page ── */}
+          <Link to="/chadhava">Chadhava</Link>
+
           <a href="#">Charity</a>
           <a href="#" className="astro-link">
             ✦ Ask Astrologer
