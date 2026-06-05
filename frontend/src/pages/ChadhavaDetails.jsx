@@ -335,82 +335,267 @@ const GlobalStyles = () => (
 
 
 /* Mobile responsiveness */
-@media screen and (max-width: 768px) {
+
+/* iPad Air / iPad Mini / iPad Pro */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
 
   .desk-layout {
-    grid-template-columns: 1fr;
-    padding: 16px;
+    max-width: 100%;
+    padding: 20px 32px;
     gap: 20px;
+    grid-template-columns: minmax(0, 1fr) 300px;
+  }
+
+  .desk-sticky-panel {
+    width: 100%;
+  }
+
+  .desk-panel-card {
+    width: 100%;
+  }
+
+  .desk-img {
+    height: 260px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  html,
+  body,
+  #root,
+  .desk-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .desk-layout {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 16px;
   }
 
   .desk-sticky-panel {
     position: static;
     top: unset;
+    width: 100%;
   }
 
   .desk-nav {
-    padding: 0 12px;
+    padding: 10px;
+    min-height: auto;
     height: auto;
-    min-height: 60px;
   }
 
-  .desk-nav-inner {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
+   .desk-nav-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
   .desk-nav-right {
     width: 100%;
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .desk-history-btn,
+  .desk-offer-cta {
+    font-size: 10px;
+    padding: 6px 8px;
+    white-space: nowrap;
   }
 
   .desk-breadcrumb {
     display: none;
   }
 
-  .desk-chadava-name {
-    font-size: 24px;
+  .desk-logo-text {
+    font-size: 18px;
+  }
+
+  .desk-nav-back {
+    font-size: 12px;
+    margin-left: 6px;
   }
 
   .desk-img {
-    height: 220px;
-    font-size: 60px;
+    width: 100%;
+    height: 140px;
+    font-size: 40px;
+  }
+
+  .desk-img-tag {
+    font-size: 10px;
+  }
+
+  .desk-img-offered {
+    display: none;
+  }
+
+  .desk-chadava-type {
+    font-size: 11px;
+  }
+
+  .desk-chadava-name {
+    font-size: 14px;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  .desk-meta-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+    flex-wrap: wrap;
+    word-break: break-word;
+  }
+
+  .desk-social {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .desk-rating {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .desk-wyg {
+    width: 100%;
   }
 
   .desk-wyg-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .desk-wyg-item {
+    padding: 10px 6px;
+  }
+
+  .desk-wyg-label {
+    font-size: 10px;
+  }
+
+  .desk-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .desk-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .desk-tab {
+    font-size: 13px;
+    padding: 10px 14px;
   }
 
   .desk-items-grid {
     grid-template-columns: 1fr;
   }
 
-  .desk-social {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+  .desk-item-box {
+    padding: 12px;
   }
 
-  .desk-rating {
-    margin-left: 0;
+  .desk-item-name {
+    font-size: 13px;
+  }
+
+  .desk-item-desc {
+    font-size: 12px;
   }
 
   .desk-panel-card {
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .desk-panel-header {
+    padding: 14px;
+  }
+
+  .desk-panel-name {
+    font-size: 16px;
+  }
+
+  .desk-panel-body {
+    padding: 14px;
+  }
+
+  .desk-panel-from-price {
+    font-size: 30px;
   }
 
   .desk-offer-btn {
-    font-size: 15px;
+    width: 100%;
+    font-size: 14px;
+    padding: 14px;
   }
 
-  .desk-tabs {
-    overflow-x: auto;
-    white-space: nowrap;
+  .desk-promise-tags {
+    flex-direction: column;
+    align-items: flex-start;
   }
+    .desk-img {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
 
+.desk-layout > div:first-child {
+  min-width: 0;
+}
 
+.desk-layout {
+  overflow: hidden;
+}
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 400px) {
+
+  .desk-logo-text {
+    font-size: 16px;
+  }
+
+  .desk-chadava-name {
+    font-size: 14px;
+  }
+
+  .desk-history-btn,
+  .desk-offer-cta {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+
+  .desk-img {
+    height: 160px;
+  }
+
+  .desk-panel-from-price {
+    font-size: 26px;
+  }
+}
 
 `}</style>
 );
