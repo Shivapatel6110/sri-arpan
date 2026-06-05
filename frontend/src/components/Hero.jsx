@@ -10,7 +10,7 @@ const HeroSection = () => {
             <div className="desk-hero-badge">Launching soon across India</div>
             <h1>Your Gateway to <span className="highlight">Sacred</span> Rituals & Blessings</h1>
             <p>Book authentic pujas at India's most revered temples, offer Chadhava, give to the needy — all from anywhere in the world.</p>
-            <div class="desk-hero-actions">
+            <div className="desk-hero-actions">
               <a href="#" className="btn-primary">🪔 Book a Puja</a>
               <a href="#" className="btn-outline">✦ Ask Astrologer</a>
             </div>
@@ -42,9 +42,9 @@ const HeroSection = () => {
               <span className="desk-hero-card-icon">🔯</span>
               <div className="desk-hero-card-title">Astrologer</div>
               <div className="astro-card-subtext">
-                <span class="astro-vedic">Vedic Knowledge</span>
-                <span class="astro-sep">·</span>
-                <span class="astro-ai">Powered by AI</span>
+                <span className="astro-vedic">Vedic Knowledge</span>
+                <span className="astro-sep">·</span>
+                <span className="astro-ai">Powered by AI</span>
               </div>
             </div>
           </div>

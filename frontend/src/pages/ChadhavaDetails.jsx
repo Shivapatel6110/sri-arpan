@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // ─────────────────────────────────────────────
 // CSS VARIABLES & GLOBAL STYLES (injected once)
@@ -32,7 +33,7 @@ const GlobalStyles = () => (
 
     /* ── Navbar ── */
     .desk-nav { background: var(--maroon-deep); height: 56px; display: flex; align-items: center; padding: 0 32px; position: sticky; top: 0; z-index: 100; }
-    .desk-nav-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .desk-nav-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
     .desk-logo { display: flex; align-items: center; gap: 10px; }
     .desk-logo-icon { width: 36px; height: 36px; background: var(--saffron); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
     .desk-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--gold-light); }
@@ -243,7 +244,175 @@ const GlobalStyles = () => (
     .bs-photo-note-icon { font-size: 22px; flex-shrink: 0; }
     .bs-photo-note-title { font-size: 13px; font-weight: 600; color: var(--gold-light); margin-bottom: 3px; }
     .bs-photo-note-text { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.5; }
-  `}</style>
+
+
+    /* ═══ MOBILE ═══ */
+.mob-wrap { background: #E8DBC8; padding: 24px 0 48px; min-height: 100vh; }
+.mob-label { text-align: center; padding: 0 16px 16px; font-size: 12px; color: #8B6B4A; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+.mob-frame { width: 390px; margin: 0 auto; background: var(--cream-bg); border-radius: 36px; overflow: hidden; border: 8px solid #2A1005; box-shadow: 0 24px 80px rgba(0,0,0,0.3); position: relative; }
+.mob-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 26px; background: #2A1005; border-radius: 0 0 20px 20px; z-index: 50; }
+.mob-screen { padding-top: 32px; padding-bottom: 110px; overflow-y: auto; max-height: 800px; position: relative; }
+
+.mob-nav { background: var(--maroon-deep); padding: 12px 18px; display: flex; align-items: center; gap: 10px; }
+.mob-back-btn { width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 16px; cursor: pointer; flex-shrink: 0; }
+.mob-nav-title { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 600; color: #fff; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mob-share-btn { width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); font-size: 14px; }
+
+.mob-img { height: 220px; background: linear-gradient(135deg, #6B1020 0%, #A0272B 55%, #C0392B 100%); display: flex; align-items: center; justify-content: center; font-size: 68px; position: relative; }
+.mob-img-tag { position: absolute; top: 12px; left: 12px; background: var(--gold); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 5px; letter-spacing: 0.06em; }
+.mob-img-offered { position: absolute; bottom: 12px; left: 12px; background: rgba(0,0,0,0.5); color: #fff; font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 6px; }
+.mob-img-dots { position: absolute; bottom: 12px; right: 12px; display: flex; gap: 5px; }
+.mob-img-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); }
+.mob-img-dot.active { background: #fff; width: 16px; border-radius: 3px; }
+
+.mob-info { padding: 16px 18px; background: var(--white); border-bottom: 1px solid var(--border); }
+.mob-chadava-type { font-size: 11px; font-weight: 700; color: var(--rose); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+.mob-chadava-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--text-dark); line-height: 1.25; margin-bottom: 12px; }
+.mob-meta { display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px; }
+.mob-meta-row { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text-mid); }
+.mob-social { display: flex; align-items: center; padding: 10px 12px; background: var(--rose-pale); border-radius: 8px; }
+.mob-offered-count { font-size: 13px; font-weight: 600; color: var(--rose); }
+.mob-offered-count span { color: var(--text-mid); font-weight: 400; }
+.mob-rating { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 3px; }
+
+/* WYG strip */
+.mob-wyg { display: grid; grid-template-columns: repeat(4,1fr); background: var(--white); border-bottom: 1px solid var(--border); }
+.mob-wyg-item { padding: 12px 6px; text-align: center; border-right: 1px solid var(--border); }
+.mob-wyg-item:last-child { border-right: none; }
+.mob-wyg-icon { font-size: 17px; margin-bottom: 3px; }
+.mob-wyg-label { font-size: 9px; font-weight: 600; color: var(--rose); line-height: 1.3; }
+
+/* Tabs */
+.mob-tab-nav { display: flex; overflow-x: auto; background: var(--white); border-bottom: 2px solid var(--border); scrollbar-width: none; position: sticky; top: 0; z-index: 20; }
+.mob-tab { padding: 11px 14px; font-size: 13px; font-weight: 500; color: var(--text-muted); white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -2px; cursor: pointer; }
+.mob-tab.active { color: var(--rose); border-bottom-color: var(--rose); font-weight: 600; }
+
+.mob-section { padding: 20px 18px; border-bottom: 1px solid var(--border); }
+.mob-section-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
+.mob-about-text { font-size: 13.5px; color: var(--text-mid); line-height: 1.75; margin-bottom: 14px; }
+.mob-includes { background: var(--gold-pale); border: 1px solid rgba(200,148,10,0.2); border-radius: 10px; padding: 13px; }
+.mob-includes-title { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 8px; }
+.mob-includes-item { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--text-mid); margin-bottom: 5px; }
+.mob-includes-item::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 11px; }
+
+/* Items grid mobile */
+.mob-items-list { display: flex; flex-direction: column; gap: 10px; }
+.mob-item-box { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 13px; display: flex; align-items: flex-start; gap: 12px; }
+.mob-item-icon { font-size: 26px; flex-shrink: 0; }
+.mob-item-name { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 3px; }
+.mob-item-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+.mob-item-significance { font-size: 10.5px; font-weight: 600; color: var(--rose); margin-top: 3px; }
+
+.mob-review-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+.mob-review-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.mob-review-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--rose-pale); border: 1.5px solid var(--rose-border); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 13px; font-weight: 700; color: var(--rose); flex-shrink: 0; }
+.mob-review-name { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+.mob-review-meta { font-size: 11px; color: var(--text-muted); }
+.mob-review-stars { color: var(--gold); font-size: 11px; margin-left: auto; }
+.mob-review-text { font-size: 12.5px; color: var(--text-mid); line-height: 1.65; font-style: italic; }
+
+.mob-faq-item { border-bottom: 1px solid var(--border); }
+.mob-faq-q { padding: 13px 0; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-size: 13.5px; font-weight: 500; color: var(--text-dark); gap: 10px; }
+.mob-faq-icon { font-size: 16px; color: var(--text-muted); flex-shrink: 0; transition: transform 0.2s; }
+.mob-faq-item.open .mob-faq-icon { transform: rotate(45deg); color: var(--rose); }
+.mob-faq-a { font-size: 13px; color: var(--text-muted); line-height: 1.65; padding-bottom: 13px; display: none; }
+.mob-faq-item.open .mob-faq-a { display: block; }
+
+.mob-promise { background: var(--green-pale); border: 1px solid rgba(30,140,80,0.2); border-radius: 12px; padding: 16px; }
+.mob-promise-title { display: flex; align-items: center; gap: 7px; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: #0F4D28; margin-bottom: 7px; }
+.mob-promise-desc { font-size: 13px; color: #2D6B45; line-height: 1.6; margin-bottom: 12px; }
+.mob-promise-tags { display: flex; gap: 7px; flex-wrap: wrap; }
+.mob-promise-tag { background: #fff; border: 1px solid rgba(30,140,80,0.2); color: var(--green); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 5px; }
+
+/* Sticky CTA */
+.mob-sticky-cta { position: sticky; bottom: 0; z-index: 100; background: var(--white); border-top: 1px solid var(--border); padding: 12px 18px; }
+.mob-cta-row { display: flex; align-items: center; gap: 12px; margin-bottom: 7px; }
+.mob-cta-from-label { font-size: 11px; color: var(--text-muted); }
+.mob-cta-price { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--rose); }
+.mob-cta-btn { flex: 1; padding: 14px; background: var(--rose); color: #fff; font-size: 15px; font-weight: 700; border: none; border-radius: 10px; font-family: 'DM Sans', sans-serif; cursor: pointer; }
+.mob-cta-secure { text-align: center; font-size: 10px; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 3px; }
+
+
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+
+  .desk-layout {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .desk-sticky-panel {
+    position: static;
+    top: unset;
+  }
+
+  .desk-nav {
+    padding: 0 12px;
+    height: auto;
+    min-height: 60px;
+  }
+
+  .desk-nav-inner {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .desk-nav-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .desk-breadcrumb {
+    display: none;
+  }
+
+  .desk-chadava-name {
+    font-size: 24px;
+  }
+
+  .desk-img {
+    height: 220px;
+    font-size: 60px;
+  }
+
+  .desk-wyg-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .desk-items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .desk-social {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .desk-rating {
+    margin-left: 0;
+  }
+
+  .desk-panel-card {
+    margin-top: 20px;
+  }
+
+  .desk-offer-btn {
+    font-size: 15px;
+  }
+
+  .desk-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+
+
+`}</style>
 );
 
 // ─────────────────────────────────────────────
@@ -257,7 +426,8 @@ const Navbar = ({ onOfferClick }) => (
           <div className="desk-logo-icon">🪔</div>
           <div className="desk-logo-text">Sri Arpan</div>
         </div>
-        <span className="desk-nav-back">← Back</span>
+      {/*  <span className="desk-nav-back">← Back</span> */}
+      <Link to="/" className="desk-nav-back" style={{ textDecoration: "none" }}>← Back</Link>
         <div className="desk-breadcrumb">
           <span>Chadhava</span> ›{" "}
           <span style={{ color: "rgba(255,255,255,0.85)" }}>
@@ -922,3 +1092,5 @@ export default function SriArpanChadavaBooking() {
     </>
   );
 }
+
+

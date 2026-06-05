@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 function Navbar() {
   return (
     <nav className="desk-nav">
@@ -19,7 +20,7 @@ function Navbar() {
 
           <a href="#">Charity</a>
           <a href="#" className="astro-link">
-            ✦ Ask Astrologer
+            ✦ Ask Astrologer 
           </a>
           <a href="#featured-pujas">Book Puja</a>
         </div>

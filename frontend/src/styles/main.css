@@ -226,3 +226,95 @@
 .desk-hero-card:hover {
   transform: translateY(-5px);
 }
+
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .desk-nav-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .desk-nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .desk-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .desk-hero h1 {
+    font-size: 42px;
+  }
+
+  .desk-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .desk-hero-stats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .desk-services-grid,
+  .puja-grid,
+  .how-grid,
+  .desk-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .desk-hero-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-proof-strip {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .trust-proof-item {
+    border-right: none;
+    padding: 0;
+  }
+
+  .raman-banner,
+  .app-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .desk-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .stats-strip {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stats-divider {
+    display: none;
+  }
+
+  .desk-section {
+    padding: 50px 20px;
+  }
+}
