@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import FeaturedPujas from "../components/FeaturedPujas";
@@ -13,6 +14,7 @@ function Home() {
   return (
     <>
       <Navbar />
+      <Link to="/admin/chadhava">Admin</Link>
       <Hero />
       <Services />
       <FeaturedPujas />
