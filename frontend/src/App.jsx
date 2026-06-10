@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import ChadhavaDetails from "./pages/ChadhavaDetails";
+
 import AdminChadhavaList from "./pages/AdminChadhavaList";
 import AdminAddChadhava from "./pages/AdminAddChadhava";
 import AdminEditChadhava from "./pages/AdminEditChadhava";
