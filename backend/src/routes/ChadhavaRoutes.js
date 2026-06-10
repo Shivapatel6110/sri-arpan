@@ -5,7 +5,7 @@ import {
   getSingleChadhava,
   updateChadhava,
   deleteChadhava,
-} from "../controllers/chadhavaController.js";
+} from "../controllers/ChadhavaController.js";
 
 const router = express.Router();
 
