@@ -48,6 +48,7 @@ const AdminChadhavaList = () => {
     + Add New Chadhava
   </Link>
 
+<div className="table-container">
       <table border="1" cellPadding="10" style={{marginTop:"15px"}}>
         <thead>
           <tr>
@@ -92,6 +93,7 @@ const AdminChadhavaList = () => {
           )}
         </tbody>
       </table>
+      </div>
       </div>
     </div>
   );

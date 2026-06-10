@@ -154,3 +154,14 @@ tr {
   color: white;
   font-weight: bold;
 }
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  min-width: 1000px; /* adjust as needed */
+  border-collapse: collapse;
+}
