@@ -1,20 +1,13 @@
 import express from "express";
 import cors from "cors";
-// import bookingRoutes from "./routes/bookingRoutes.js";
+import chadhavaRoutes from "./routes/chadhavaRoutes.js";
 
 const app = express();
 
 app.use(cors());
+
 app.use(express.json());
 
-// Booking Routes
-// app.use("/api/bookings", bookingRoutes);
-
-app.get("/", (req, res) => {
-  res.json({
-    success: true,
-    message: "Sri Arpan Backend Running",
-  });
-});
+app.use("/api/chadhava", chadhavaRoutes);
 
 export default app;
